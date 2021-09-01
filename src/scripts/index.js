@@ -18,7 +18,9 @@ const schoolHours = [
 ];
 
 const fetchTimeTable = async (timeframe) => {
-  return await axios.get(`http://localhost:3000/${timeframe}plan`);
+  return await axios.get(
+    `https://sleepy-peak-69154.herokuapp.com/${timeframe}plan`
+  );
 };
 
 generateTable(schoolHours, fetchTimeTable("day"));
