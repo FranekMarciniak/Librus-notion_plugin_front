@@ -19,7 +19,13 @@ const schoolHours = [
 
 const fetchTimeTable = async (timeframe) => {
   return await axios.get(
-    `https://sleepy-peak-69154.herokuapp.com/${timeframe}plan`
+    `https://sleepy-peak-69154.herokuapp.com/${timeframe}plan`,
+    {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-type": "application/json",
+      },
+    }
   );
 };
 
