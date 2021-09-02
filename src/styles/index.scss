@@ -57,7 +57,7 @@ table {
   }
   th,
   td {
-    width: 50%;
+    width: 70%;
     text-align: center;
     overflow-wrap: break-word;
     min-width: 0;
@@ -67,6 +67,10 @@ table {
     border-left: 1px solid #474c50;
     border-top: 1px solid #474c50;
     padding: 20px 20px;
+  }
+  td:nth-child(odd),
+  th:nth-child(odd) {
+    width: 20%;
   }
   tr:first-child {
     border-right: none;
