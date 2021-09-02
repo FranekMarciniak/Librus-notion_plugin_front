@@ -2,6 +2,13 @@ const table = document.querySelector("table").firstElementChild;
 
 export const generateTable = async (hours, plan) => {
   const timeTable = await plan;
+  const tableHead = document.createElement("tr");
+  tableHead.innerHTML = `<tr>
+          <th>~</th>
+          <th>Dziś</th>
+        </tr>`;
+  table.appendChild(tableHead);
+
   hours.forEach((element, index) => {
     const row = document.createElement("tr");
     const hours = document.createElement("td");
@@ -14,7 +21,6 @@ export const generateTable = async (hours, plan) => {
 
     row.appendChild(hours);
     row.appendChild(subject);
-
     table.appendChild(row);
   });
 };

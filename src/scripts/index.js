@@ -1,4 +1,7 @@
 import axios from "axios";
+const reloadButton = document.querySelector("#reload");
+const table = document.querySelector("table").firstElementChild;
+
 import { generateTable } from "./dayplanUI.js";
 const schoolHours = [
   "07:10 - 07:55",
@@ -22,5 +25,8 @@ const fetchTimeTable = async (timeframe) => {
     `https://sleepy-peak-69154.herokuapp.com/${timeframe}plan`
   );
 };
-
+reloadButton.addEventListener("click", () => {
+  table.innerHTML = "";
+  generateTable(schoolHours, fetchTimeTable("day"));
+});
 generateTable(schoolHours, fetchTimeTable("day"));
