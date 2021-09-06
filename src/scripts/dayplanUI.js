@@ -18,7 +18,9 @@ export const generateTable = async (hours, plan) => {
     subject.innerText = timeTable.data[index]
       ? timeTable.data[index].title.replace(/\n/g, "")
       : "";
-
+    if (timeTable.data[index] && timeTable.data[index].flag === "odwołane") {
+      subject.innerHTML = `<del>${subject.innerHTML}</del>`;
+    }
     row.appendChild(hours);
     row.appendChild(subject);
     table.appendChild(row);
